@@ -119,6 +119,7 @@ define tomcat::instance(
   $instance_basedir   = false,
   $tomcat_version     = false,
   $catalina_logrotate = true,
+  $uri_encoding       = 'UTF-8',
 ) {
 
   Class['tomcat::install'] -> Tomcat::Instance[$title]
@@ -224,6 +225,7 @@ define tomcat::instance(
       owner            => $owner,
       instance_basedir => $instance_basedir,
       notify           => $service_notify,
+      uri_endocing     => $uri_encoding,
     }
 
     tomcat::connector{"ajp-${ajp_port}-${name}":
@@ -237,6 +239,7 @@ define tomcat::instance(
       owner            => $owner,
       instance_basedir => $instance_basedir,
       notify           => $service_notify,
+      uri_endocing     => $uri_encoding,
     }
 
   } else {
