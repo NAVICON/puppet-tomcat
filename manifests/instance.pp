@@ -225,7 +225,7 @@ define tomcat::instance(
       owner            => $owner,
       instance_basedir => $instance_basedir,
       notify           => $service_notify,
-      uri_endocing     => $uri_encoding,
+      uri_encoding     => $uri_encoding,
     }
 
     tomcat::connector{"ajp-${ajp_port}-${name}":
@@ -239,7 +239,7 @@ define tomcat::instance(
       owner            => $owner,
       instance_basedir => $instance_basedir,
       notify           => $service_notify,
-      uri_endocing     => $uri_encoding,
+      uri_encoding     => $uri_encoding,
     }
 
   } else {
